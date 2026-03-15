@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tecnologia & CORVUS — MASAYOSHI</title>
+  <link rel="shortcut icon" href="imagens/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="cursor"></div>
+  <div class="cursor-ring"></div>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">
+      <span>M</span><span class="logo-accent">S</span><span>Y</span>
+      <span class="logo-dot"></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="tecnologia.html" class="active">Tecnologia</a></li>
+      <li><a href="membros.html">Membros</a></li>
+      <li><a href="participar.html">Participar</a></li>
+    </ul>
+    <a href="acesso.html" class="nav-cta">Área de Acesso</a>
+    <button class="nav-burger"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="nav-mobile">
+    <a href="sobre.html">Sobre</a>
+    <a href="tecnologia.html">Tecnologia</a>
+    <a href="membros.html">Membros</a>
+    <a href="participar.html">Participar</a>
+    <a href="acesso.html" style="color:var(--ember)">Área de Acesso</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="grid-bg"></div>
+    <div class="page-hero-inner">
+      <div class="eyebrow">Tecnologia · Inovação · IA</div>
+      <h1 class="section-title display-title" style="font-size: clamp(2.5rem, 7vw, 5rem); margin-top: 16px;">
+        A Masayoshi<br>domina a<br>
+        <span style="color:var(--ember)">tecnologia.</span>
+      </h1>
+      <p class="section-sub" style="margin-top: 24px;">
+        Inteligência artificial, automações e sistemas internos desenvolvidos pela própria ordem.
+      </p>
+    </div>
+  </div>
+
+  <!-- CORVUS SECTION -->
+  <section style="background: var(--void);">
+    <div class="inner">
+      <div class="eyebrow" data-reveal>Sistema Principal</div>
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items:start; margin-top: 48px;" class="about-grid">
+
+        <div data-reveal data-reveal-delay="1">
+          <div class="corvus-badge" style="margin-bottom: 28px;">
+            <span class="dot"></span>
+            CORVUS · Sistema Ativo · v2.0
+          </div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; color: var(--bone); line-height: 1.05; margin-bottom: 24px;">
+            CORVUS<br><span style="color:var(--ember); font-size:0.55em; letter-spacing:0.06em; font-weight:400;">A Inteligência da Ordem</span>
+          </h2>
+          <p style="color:var(--ash); font-size:0.98rem; line-height:1.85; margin-bottom:20px;">
+            O CORVUS é o sistema de inteligência artificial desenvolvido internamente pela Masayoshi. Mais do que um chatbot, é o agente oficial da ordem, uma entidade digital com acesso a ferramentas internas, automações e capacidades em constante expansão.
+          </p>
+          <p style="color:var(--ash); font-size:0.98rem; line-height:1.85; margin-bottom:36px;">
+            O nome não é acidente. O corvo é símbolo de inteligência, estratégia e visão além do óbvio. Assim opera o CORVUS, observando, aprendendo e apoiando a ordem de dentro para fora.
+          </p>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap;">
+            <a href="https://t4msy.github.io/Corvus-2.0/" target="_blank" class="btn btn-primary">
+              Acessar CORVUS <i class="fas fa-crow"></i>
+            </a>
+            <a href="acesso.html" class="btn btn-outline">
+              Área Restrita <i class="fas fa-lock"></i>
+            </a>
+          </div>
+        </div>
+
+        <div data-reveal data-reveal-delay="2">
+          <!-- TERMINAL -->
+          <div class="terminal-block">
+            <div class="terminal-bar">
+              <span class="t-dot r"></span>
+              <span class="t-dot y"></span>
+              <span class="t-dot g"></span>
+              <span class="t-title">corvus-shell · msy-system</span>
+            </div>
+            <div class="terminal-body">
+              <span class="t-line"><span class="t-prompt">msy@corvus</span><span class="t-comment">:~$</span> <span class="t-cmd">corvus --status</span></span>
+              <span class="t-line"><span class="t-output">  [CORVUS v2.0] Sistema operacional</span></span>
+              <span class="t-line"><span class="t-success">  ✓ Agente institucional ativo</span></span>
+              <span class="t-line"><span class="t-success">  ✓ Módulos de IA carregados</span></span>
+              <span class="t-line"><span class="t-success">  ✓ Ferramentas internas sincronizadas</span></span>
+              <span class="t-line">&nbsp;</span>
+              <span class="t-line"><span class="t-prompt">msy@corvus</span><span class="t-comment">:~$</span> <span class="t-cmd">corvus --modules</span></span>
+              <span class="t-line"><span class="t-gold">  → chat-institucional    [ATIVO]</span></span>
+              <span class="t-line"><span class="t-gold">  → suporte-interno       [ATIVO]</span></span>
+              <span class="t-line"><span class="t-gold">  → automacoes-n8n        [ATIVO]</span></span>
+              <span class="t-line"><span class="t-gold">  → analytics-bridge      [ATIVO]</span></span>
+              <span class="t-line"><span class="t-comment">  → corvus-mobile         [EM DEV]</span></span>
+              <span class="t-line">&nbsp;</span>
+              <span class="t-line"><span class="t-prompt">msy@corvus</span><span class="t-comment">:~$</span> <span class="t-cursor"></span></span>
+            </div>
+          </div>
+
+          <!-- FEATURES GRID -->
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top:16px;">
+            <div style="background:var(--surface); border:1px solid var(--border); border-radius:4px; padding:20px;">
+              <div style="font-size:1.2rem; margin-bottom:10px;">🧠</div>
+              <div style="font-family:var(--font-display); font-size:0.88rem; font-weight:700; color:var(--bone); margin-bottom:6px;">IA Generativa</div>
+              <div style="font-size:0.78rem; color:var(--ash); line-height:1.65;">Processamento de linguagem natural e geração de conteúdo inteligente.</div>
+            </div>
+            <div style="background:var(--surface); border:1px solid var(--border); border-radius:4px; padding:20px;">
+              <div style="font-size:1.2rem; margin-bottom:10px;">⚡</div>
+              <div style="font-family:var(--font-display); font-size:0.88rem; font-weight:700; color:var(--bone); margin-bottom:6px;">Automações</div>
+              <div style="font-size:0.78rem; color:var(--ash); line-height:1.65;">Workflows automatizados integrando n8n e APIs externas.</div>
+            </div>
+            <div style="background:var(--surface); border:1px solid var(--border); border-radius:4px; padding:20px;">
+              <div style="font-size:1.2rem; margin-bottom:10px;">📱</div>
+              <div style="font-family:var(--font-display); font-size:0.88rem; font-weight:700; color:var(--bone); margin-bottom:6px;">Mobile (Em Dev)</div>
+              <div style="font-size:0.78rem; color:var(--ash); line-height:1.65;">App móvel do Corvus com Capacitor/Ionic para Android.</div>
+            </div>
+            <div style="background:var(--surface); border:1px solid var(--border); border-radius:4px; padding:20px;">
+              <div style="font-size:1.2rem; margin-bottom:10px;">🔐</div>
+              <div style="font-family:var(--font-display); font-size:0.88rem; font-weight:700; color:var(--bone); margin-bottom:6px;">Acesso Restrito</div>
+              <div style="font-size:0.78rem; color:var(--ash); line-height:1.65;">Sistema de login e permissões exclusivas por nível de membro.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER PROJECTS -->
+  <section style="background: var(--deep); border-top: 1px solid var(--border);">
+    <div class="inner">
+      <div class="eyebrow" data-reveal>Ecossistema MSY</div>
+      <h2 class="section-title" data-reveal data-reveal-delay="1">Outros projetos<br>em operação</h2>
+
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 48px;" data-reveal data-reveal-delay="2">
+        <div class="proj-card" style="padding:40px;" data-num="01">
+          <div class="proj-icon">📊</div>
+          <div class="proj-title" style="font-size:1.15rem; margin-bottom:12px;">MSY Analytics — Semanal</div>
+          <div class="proj-desc" style="margin-bottom:24px;">Relatório semanal de desempenho da unidade. Acompanha indicadores operacionais e métricas de atividade da ordem em tempo real.</div>
+          <a href="https://t4msy.github.io/MSY-ANALYTICS/" target="_blank" class="btn btn-outline" style="font-size:0.7rem; padding:10px 20px;">
+            Acessar <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+        <div class="proj-card" style="padding:40px;" data-num="02">
+          <div class="proj-icon">📅</div>
+          <div class="proj-title" style="font-size:1.15rem; margin-bottom:12px;">MSY Analytics — Mensal</div>
+          <div class="proj-desc" style="margin-bottom:24px;">Análise de desempenho mensal consolidada. Visão estratégica da evolução coletiva da ordem ao longo do tempo.</div>
+          <a href="https://t4msy.github.io/MSY-ANALYTICS-MENSAL/" target="_blank" class="btn btn-outline" style="font-size:0.7rem; padding:10px 20px;">
+            Acessar <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+        <div class="proj-card" style="padding:40px;" data-num="03">
+          <div class="proj-icon">📝</div>
+          <div class="proj-title" style="font-size:1.15rem; margin-bottom:12px;">Gerador de Provas IA</div>
+          <div class="proj-desc" style="margin-bottom:24px;">Sistema automático de criação de avaliações com múltiplas engines de IA. Ferramenta educacional de alta precisão.</div>
+          <a href="https://t4msy.github.io/Gerador-de-Provas/" target="_blank" class="btn btn-outline" style="font-size:0.7rem; padding:10px 20px;">
+            Acessar <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section style="background: var(--void);">
+    <div class="inner">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto;" data-reveal>
+        <div class="eyebrow" style="justify-content:center;">Visão Tecnológica</div>
+        <h2 class="section-title" style="margin-bottom: 24px;">Uma ordem que<br>lidera pela inteligência</h2>
+        <p style="color:var(--ash); font-size:1rem; line-height:1.85; margin-bottom:40px;">
+          A Masayoshi acredita que dominar tecnologia não é opcional, é um diferencial estratégico. Automação, IA e sistemas inteligentes são as ferramentas que amplificam o poder humano. Dentro da MSY, tecnologia é filosofia aplicada.
+        </p>
+
+        <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: 24px; text-align:left;">
+          <div style="padding:28px; background:var(--surface); border:1px solid var(--border); border-radius:4px;">
+            <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; color:var(--ember); margin-bottom:12px;">PILAR 01</div>
+            <div style="font-family:var(--font-display); font-size:1rem; font-weight:700; color:var(--bone); margin-bottom:10px;">Automação</div>
+            <p style="font-size:0.82rem; color:var(--ash); line-height:1.7;">Sistemas que trabalham enquanto os membros focam no que realmente importa.</p>
+          </div>
+          <div style="padding:28px; background:var(--surface); border:1px solid var(--border); border-radius:4px;">
+            <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; color:var(--ember); margin-bottom:12px;">PILAR 02</div>
+            <div style="font-family:var(--font-display); font-size:1rem; font-weight:700; color:var(--bone); margin-bottom:10px;">Inteligência</div>
+            <p style="font-size:0.82rem; color:var(--ash); line-height:1.7;">IA aplicada aos processos internos da ordem para potencializar decisões.</p>
+          </div>
+          <div style="padding:28px; background:var(--surface); border:1px solid var(--border); border-radius:4px;">
+            <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; color:var(--ember); margin-bottom:12px;">PILAR 03</div>
+            <div style="font-family:var(--font-display); font-size:1rem; font-weight:700; color:var(--bone); margin-bottom:10px;">Inovação</div>
+            <p style="font-size:0.82rem; color:var(--ash); line-height:1.7;">Desenvolvimento contínuo de novas ferramentas e experimentos tecnológicos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-bottom" style="padding-top:0; border-top:none;">
+        <span class="footer-copy">© 2026 Masayoshi · Todos os direitos reservados.</span>
+        <a href="../index.html" style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; color:var(--mist);">← Voltar ao início</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
