@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASAYOSHI — Ordem. Tecnologia. Evolução.</title>
+  <link rel="shortcut icon" href="pages/imagens/logo.jpg" type="image/x-icon">
+  <meta name="description" content="A Masayoshi é uma ordem estratégica focada em tecnologia, desenvolvimento pessoal, liderança e inovação.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <span>M</span><span class="logo-accent">S</span><span>Y</span>
+      <span class="logo-dot"></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="pages/sobre.html">Sobre</a></li>
+      <li><a href="pages/tecnologia.html">Tecnologia</a></li>
+      <li><a href="pages/membros.html">Membros</a></li>
+      <li><a href="pages/participar.html">Participar</a></li>
+    </ul>
+    <a href="pages/acesso.html" class="nav-cta">Área de Acesso</a>
+    <button class="nav-burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="nav-mobile">
+    <a href="pages/sobre.html">Sobre</a>
+    <a href="pages/tecnologia.html">Tecnologia</a>
+    <a href="pages/membros.html">Membros</a>
+    <a href="pages/participar.html">Participar</a>
+    <a href="pages/acesso.html" style="color:var(--ember)">Área de Acesso</a>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────────────── -->
+  <section class="hero">
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <div class="hero-glow"></div>
+
+    <div class="hero-inner">
+      <div class="hero-tag">Ordem Masayoshi · Est. 2021</div>
+
+      <h1 class="hero-title">
+        <span class="glitch" data-text="MASAYOSHI">MASAYOSHI</span><br>
+        <span class="t-ghost" style="font-size:0.45em; letter-spacing:0.06em; font-weight:400;">Poder · União · <span id="typeTarget" style="color:var(--ember)">TECNOLOGIA</span></span>
+      </h1>
+
+      <p class="hero-desc">
+        Uma ordem estratégica que une desenvolvimento pessoal, liderança e inovação tecnológica. Formamos indivíduos livres, inteligentes e capazes de influenciar o mundo.
+      </p>
+
+      <div class="hero-actions">
+        <a href="pages/sobre.html" class="btn btn-primary">
+          Conhecer a Ordem <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="pages/tecnologia.html" class="btn btn-outline">
+          Ver Projetos <i class="fas fa-microchip"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-quote">
+      <blockquote>
+        "Como o diamante, lapidamos nossa essência.<br>
+        Como os pássaros, alçamos voo.<br>
+        Como o olho que tudo vê, enxergamos além."
+      </blockquote>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ─── STATS STRIP ──────────────────────────────────── -->
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item" data-reveal>
+        <div class="stat-num">
+          <span data-count="10" data-suffix="+">10+</span>
+        </div>
+        <div class="stat-label">Membros Ativos</div>
+      </div>
+      <div class="stat-item" data-reveal data-reveal-delay="1">
+        <div class="stat-num">
+          <span data-count="4" data-suffix="">4</span>
+        </div>
+        <div class="stat-label">Projetos em Operação</div>
+      </div>
+      <div class="stat-item" data-reveal data-reveal-delay="2">
+        <div class="stat-num">
+          <span data-count="3" data-suffix="">3</span>
+        </div>
+        <div class="stat-label">Camadas Estruturais</div>
+      </div>
+      <div class="stat-item" data-reveal data-reveal-delay="3">
+        <div class="stat-num">
+          <span class="s-accent">2026</span>
+        </div>
+        <div class="stat-label">Nova Fase Estratégica</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SOBRE ─────────────────────────────────────────── -->
+  <section style="background: var(--void);">
+    <div class="inner">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="eyebrow" data-reveal>01 — Quem somos</div>
+          <h2 class="section-title" data-reveal data-reveal-delay="1">Uma irmandade<br>forjada para o futuro</h2>
+          <div class="line-red" data-reveal data-reveal-delay="2"></div>
+          <p data-reveal data-reveal-delay="2">
+            A Masayoshi é mais do que uma irmandade, é uma força estratégica. Inspirada nas grandes ordens de desenvolvimento intelectual, a MSY une pessoas com propósito: crescer, liderar e transformar.
+          </p>
+          <p data-reveal data-reveal-delay="3">
+            Nossa nova fase coloca a tecnologia e a inteligência artificial no centro da organização. Com projetos como o CORVUS e sistemas de automação internos, a Masayoshi caminha para ser referência em inovação dentro de comunidades de desenvolvimento pessoal.
+          </p>
+          <div style="margin-top: 36px;" data-reveal data-reveal-delay="4">
+            <a href="pages/sobre.html" class="btn btn-outline">
+              Nossa história <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="about-visual" data-reveal data-reveal-delay="2">
+          <div class="about-emblem">
+            <div class="emblem-ring"></div>
+            <div class="emblem-ring"></div>
+            <div class="emblem-ring"></div>
+            <div class="emblem-core">
+              <div class="emblem-letter">MSY</div>
+              <div class="emblem-sub">Masayoshi Order</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── VALUES ───────────────────────────────────────── -->
+  <section class="values-section">
+    <div class="inner">
+      <div class="values-header" data-reveal>
+        <div class="eyebrow">02 — Pilares</div>
+        <h2 class="section-title">Os quatro pilares<br>da Ordem</h2>
+        <p class="section-sub">Princípios que orientam cada decisão, cada projeto e cada membro da Masayoshi.</p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card" data-reveal>
+          <div class="value-num">01</div>
+          <div class="value-icon">⚔️</div>
+          <div class="value-title">Lealdade</div>
+          <div class="value-desc">Compromisso inabalável com a ordem, com os irmãos e com os próprios valores. A lealdade é a base de toda confiança.</div>
+        </div>
+        <div class="value-card" data-reveal data-reveal-delay="1">
+          <div class="value-num">02</div>
+          <div class="value-icon">🔗</div>
+          <div class="value-title">União</div>
+          <div class="value-desc">A força do coletivo supera qualquer conquista individual. Crescemos juntos, nos apoiamos e construímos algo maior do que nós mesmos.</div>
+        </div>
+        <div class="value-card" data-reveal data-reveal-delay="2">
+          <div class="value-num">03</div>
+          <div class="value-icon">⚖️</div>
+          <div class="value-title">Justiça</div>
+          <div class="value-desc">Agir com equidade e integridade. Fazer a coisa certa mesmo quando é difícil. A justiça guia nossas ações internas e externas.</div>
+        </div>
+        <div class="value-card" data-reveal data-reveal-delay="3">
+          <div class="value-num">04</div>
+          <div class="value-icon">🦅</div>
+          <div class="value-title">Liberdade</div>
+          <div class="value-desc">Quebrar correntes mentais, financeiras e sociais. A verdadeira liberdade é o objetivo final de cada membro da Masayoshi.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ──────────────────────────────────────── -->
+  <section style="background: var(--void);">
+    <div class="inner">
+      <div class="projects-header" data-reveal>
+        <div>
+          <div class="eyebrow">03 — Tecnologia</div>
+          <h2 class="section-title">Projetos da Ordem</h2>
+        </div>
+        <a href="pages/tecnologia.html" class="btn btn-outline">
+          Ver todos <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- CORVUS DESTAQUE -->
+      <div class="corvus-card" data-reveal>
+        <div class="corvus-badge">
+          <span class="dot"></span>
+          Sistema Ativo · v2.0
+        </div>
+        <h3 class="corvus-title">CORVUS<br><span>IA da Ordem</span></h3>
+        <p class="corvus-desc">
+          O sistema de inteligência artificial desenvolvido internamente pela Masayoshi. O Corvus é o agente oficial da ordem, um chatbot institucional com automações, suporte interno e capacidades em constante expansão.
+        </p>
+        <div class="corvus-features">
+          <span class="feature-tag">Chat Institucional</span>
+          <span class="feature-tag">Automações</span>
+          <span class="feature-tag">Suporte Interno</span>
+          <span class="feature-tag">IA Generativa</span>
+          <span class="feature-tag">Ferramentas MSY</span>
+        </div>
+        <div class="corvus-footer">
+          <a href="pages/tecnologia.html" class="btn btn-primary">
+            Explorar Corvus <i class="fas fa-crow"></i>
+          </a>
+          <a href="pages/acesso.html" class="btn btn-outline">
+            Acessar Sistema <i class="fas fa-lock"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- SECONDARY PROJECTS -->
+      <div class="projects-secondary" data-reveal>
+        <div class="proj-card" data-num="01">
+          <div class="proj-icon">📊</div>
+          <div class="proj-title">MSY Analytics</div>
+          <div class="proj-desc">Relatórios semanais e mensais de desempenho da unidade. Análise de dados operacionais da ordem.</div>
+        </div>
+        <div class="proj-card" data-num="02">
+          <div class="proj-icon">📝</div>
+          <div class="proj-title">Gerador de Provas IA</div>
+          <div class="proj-desc">Sistema de criação automática de avaliações com múltiplas engines de inteligência artificial.</div>
+        </div>
+        <div class="proj-card" data-num="03">
+          <div class="proj-icon">⚡</div>
+          <div class="proj-title">Automações Internas</div>
+          <div class="proj-desc">Pipelines e workflows automatizados integrando n8n e ferramentas externas ao ecossistema MSY.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STRUCTURE ─────────────────────────────────────── -->
+  <section class="structure-section">
+    <div class="inner">
+      <div class="eyebrow" data-reveal>04 — Estrutura</div>
+      <h2 class="section-title" data-reveal data-reveal-delay="1">Três camadas.<br>Uma visão.</h2>
+
+      <div class="structure-grid">
+        <div class="layer-list" data-reveal>
+          <div class="layer-item active">
+            <div class="layer-name">
+              <span>MSY</span>
+            </div>
+            <div class="layer-role">Núcleo · Ordem Principal</div>
+            <div class="layer-detail">
+              <p>O coração da organização. A camada MSY reúne os membros centrais da ordem, líderes, fundadores e colaboradores diretos comprometidos com os valores e missão da Masayoshi.</p>
+            </div>
+          </div>
+          <div class="layer-item">
+            <div class="layer-name">NeverMind</div>
+            <div class="layer-role">Conteúdo · Pipeline de Mídia</div>
+            <div class="layer-detail">
+              <p>O braço de comunicação e conteúdo da Masayoshi. Responsável por redes sociais, produção audiovisual, identidade externa e o pipeline editorial da ordem.</p>
+            </div>
+          </div>
+          <div class="layer-item">
+            <div class="layer-name">Britannia</div>
+            <div class="layer-role">Comunidade · Conector Externo</div>
+            <div class="layer-detail">
+              <p>A camada que conecta a ordem com o mundo. A Britannia é a comunidade aberta da MSY, um espaço para pessoas alinhadas com os valores que desejam fazer parte do ecossistema.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="structure-visual" data-reveal data-reveal-delay="2">
+          <div class="structure-diagram">
+            <div class="grid-bg"></div>
+            <div class="diagram-layer">
+              <div class="diagram-name">MSY</div>
+              <div class="diagram-sub">Ordem Principal · Núcleo</div>
+            </div>
+            <div class="diagram-layer">
+              <div class="diagram-name">NEVERMIND</div>
+              <div class="diagram-sub">Conteúdo · Mídia · Pipeline</div>
+            </div>
+            <div class="diagram-layer">
+              <div class="diagram-name">BRITANNIA</div>
+              <div class="diagram-sub">Comunidade · Conector Externo</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; display:flex; gap:16px; flex-wrap:wrap;">
+            <div style="display:flex; align-items:center; gap:8px; font-family: var(--font-mono); font-size:0.65rem; color:var(--mist);">
+              <span style="width:12px; height:1px; background:var(--ember); display:inline-block;"></span>
+              Núcleo restrito
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; font-family: var(--font-mono); font-size:0.65rem; color:var(--mist);">
+              <span style="width:12px; height:1px; background:var(--gold); display:inline-block;"></span>
+              Mídia e conteúdo
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; font-family: var(--font-mono); font-size:0.65rem; color:var(--mist);">
+              <span style="width:12px; height:1px; background:var(--mist); display:inline-block;"></span>
+              Comunidade aberta
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MEMBERS PREVIEW ───────────────────────────────── -->
+  <section style="background: var(--void);">
+    <div class="inner">
+      <div class="members-header" data-reveal>
+        <div>
+          <div class="eyebrow">05 — Irmandade</div>
+          <h2 class="section-title">Os que constroem<br>a Ordem</h2>
+        </div>
+        <a href="pages/membros.html" class="btn btn-outline">
+          Ver todos <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="members-grid">
+        <div class="member-preview" data-reveal>
+          <img src="pages/imagens/T4.jpeg" alt="T4" class="member-avatar">
+          <div class="member-pname">T4</div>
+          <div class="member-prole">Fundador</div>
+        </div>
+        <div class="member-preview" data-reveal data-reveal-delay="1">
+          <img src="https://i.imgur.com/lS03Aba.jpeg" alt="Xitter" class="member-avatar">
+          <div class="member-pname">Xitter</div>
+          <div class="member-prole">Coord. Geral</div>
+        </div>
+        <div class="member-preview" data-reveal data-reveal-delay="2">
+          <img src="https://i.imgur.com/toVfYbB.jpeg" alt="Hariany" class="member-avatar">
+          <div class="member-pname">Hariany</div>
+          <div class="member-prole">Secretária</div>
+        </div>
+        <div class="member-preview" data-reveal data-reveal-delay="3">
+          <img src="https://i.imgur.com/D8PKARh.jpg" alt="Vastag" class="member-avatar">
+          <div class="member-pname">Vastag</div>
+          <div class="member-prole">Supervisor</div>
+        </div>
+        <div class="member-preview" data-reveal data-reveal-delay="4">
+          <img src="https://imgur.com/95tBUXI.jpg" alt="Ph" class="member-avatar">
+          <div class="member-pname">Ph</div>
+          <div class="member-prole">Designer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ───────────────────────────────────────────── -->
+  <section class="cta-section" style="background: var(--deep); border-top: 1px solid var(--border);">
+    <div class="grid-bg" style="opacity:0.3;"></div>
+    <div class="inner">
+      <div class="cta-inner" data-reveal>
+        <div class="eyebrow" style="justify-content:center;">Pronto para evoluir?</div>
+        <h2 class="cta-big">Junte-se à<br><span>Masayoshi</span></h2>
+        <p class="section-sub" style="margin: 0 auto; text-align:center;">
+          Se você busca crescimento real, irmandade genuína e inovação constante, este é o seu lugar.
+        </p>
+        <div class="cta-actions">
+          <a href="pages/participar.html" class="btn btn-primary">
+            Solicitar Entrada <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="pages/sobre.html" class="btn btn-outline">
+            Conhecer mais <i class="fas fa-info-circle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom:16px;">
+            <span>M</span><span class="logo-accent">S</span><span>Y</span>
+            <span class="logo-dot"></span>
+          </div>
+          <p>Uma ordem estratégica focada em desenvolvimento pessoal, tecnologia e liderança.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <a href="pages/sobre.html">Sobre a Ordem</a>
+          <a href="pages/tecnologia.html">Tecnologia</a>
+          <a href="pages/membros.html">Membros</a>
+          <a href="pages/participar.html">Participar</a>
+        </div>
+        <div class="footer-col">
+          <h4>Projetos</h4>
+          <a href="https://t4msy.github.io/Corvus-2.0/" target="_blank">Corvus 2.0</a>
+          <a href="https://t4msy.github.io/MSY-ANALYTICS/" target="_blank">MSY Analytics</a>
+          <a href="https://t4msy.github.io/Gerador-de-Provas/" target="_blank">Gerador de Provas</a>
+        </div>
+        <div class="footer-col">
+          <h4>Comunidade</h4>
+          <a href="https://www.instagram.com/masayoshi.ofc/" target="_blank">Instagram</a>
+          <a href="https://www.tiktok.com/@masayoshi.msy" target="_blank">TikTok</a>
+          <a href="https://discord.gg/c46YvmPt" target="_blank">Discord</a>
+          <a href="pages/acesso.html">Área Restrita</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Masayoshi · Todos os direitos reservados.</span>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/masayoshi.ofc/" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@masayoshi.msy" target="_blank" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://discord.gg/c46YvmPt" target="_blank" aria-label="Discord">
+            <i class="fab fa-discord"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
