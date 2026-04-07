@@ -3,10 +3,333 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acesso Restrito — MASAYOSHI</title>
+  <title>Portal do Membro — MASAYOSHI</title>
   <link rel="shortcut icon" href="imagens/logo.jpg" type="image/x-icon">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .portal-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: calc(var(--nav-h) + 60px) 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .portal-inner {
+      width: 100%;
+      max-width: 760px;
+    }
+
+    .portal-header { margin-bottom: 64px; }
+
+    .portal-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.1s var(--ease-out) forwards;
+    }
+
+    .portal-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--ember);
+    }
+
+    .portal-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      line-height: 1.0;
+      color: var(--bone);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.2s var(--ease-out) forwards;
+    }
+
+    .portal-title .t-gold { color: var(--gold-lt); }
+
+    .portal-subtitle {
+      font-size: 1.05rem;
+      color: var(--ash);
+      line-height: 1.8;
+      max-width: 560px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.3s var(--ease-out) forwards;
+    }
+
+    .portal-line {
+      width: 48px;
+      height: 2px;
+      background: var(--ember);
+      margin-top: 28px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.35s var(--ease-out) forwards;
+    }
+
+    .portal-blocks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      margin-bottom: 40px;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.45s var(--ease-out) forwards;
+    }
+
+    .portal-block {
+      background: var(--surface);
+      padding: 32px 36px;
+      transition: background 0.3s;
+    }
+
+    .portal-block:hover { background: var(--raised); }
+
+    .portal-block-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .portal-block-label::before {
+      content: '';
+      width: 12px;
+      height: 1px;
+      background: var(--ember);
+    }
+
+    .portal-block p {
+      font-size: 0.9rem;
+      color: var(--ash);
+      line-height: 1.75;
+    }
+
+    .portal-block-restrict {
+      grid-column: 1 / -1;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 36px;
+      background: var(--surface);
+    }
+
+    .restrict-icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border-red);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ember);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .portal-block-restrict p {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--mist);
+      line-height: 1.6;
+    }
+
+    .portal-block-restrict p strong {
+      color: var(--ash);
+      font-weight: 500;
+    }
+
+    .portal-features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      margin-bottom: 48px;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.55s var(--ease-out) forwards;
+    }
+
+    .portal-feat {
+      background: var(--surface);
+      padding: 22px 20px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    .portal-feat:hover { background: var(--raised); }
+
+    .portal-feat-icon {
+      font-size: 0.9rem;
+      color: var(--mist);
+      margin-bottom: 10px;
+    }
+
+    .portal-feat-name {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mist);
+      line-height: 1.5;
+    }
+
+    .portal-cta-wrap {
+      opacity: 0;
+      animation: fadeUp 0.9s 0.65s var(--ease-out) forwards;
+    }
+
+    .portal-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 32px 40px;
+      background: var(--surface);
+      border: 1px solid var(--border-red);
+      border-radius: 4px;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, background 0.3s;
+      cursor: none;
+    }
+
+    .portal-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 100% at 50% 50%, rgba(180, 20, 35, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+      transition: opacity 0.4s;
+      opacity: 0;
+    }
+
+    .portal-cta:hover { border-color: var(--ember); background: var(--raised); }
+    .portal-cta:hover::before { opacity: 1; }
+    .portal-cta:hover .cta-glow { opacity: 1; }
+    .portal-cta:hover .cta-arrow {
+      transform: translateX(6px);
+      border-color: var(--ember);
+      background: rgba(196, 30, 58, 0.1);
+    }
+
+    .cta-glow {
+      position: absolute;
+      inset: 0;
+      box-shadow: inset 0 0 60px rgba(196, 30, 58, 0.08);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .cta-left {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cta-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ember);
+    }
+
+    .cta-text {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--bone);
+    }
+
+    .cta-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+
+    .cta-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mist);
+    }
+
+    .cta-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #50fa7b;
+      animation: dot-pulse 2s infinite;
+    }
+
+    @keyframes dot-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .cta-arrow {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border-red);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ember);
+      font-size: 0.9rem;
+      transition: transform 0.3s var(--ease-out), border-color 0.3s, background 0.3s;
+    }
+
+    .portal-note {
+      margin-top: 20px;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      color: var(--ghost);
+      opacity: 0;
+      animation: fadeUp 0.9s 0.75s var(--ease-out) forwards;
+    }
+
+    @media (max-width: 640px) {
+      .portal-blocks { grid-template-columns: 1fr; }
+      .portal-features { grid-template-columns: repeat(2, 1fr); }
+      .portal-cta { flex-direction: column; align-items: flex-start; gap: 24px; padding: 28px 24px; }
+      .portal-title { font-size: clamp(2.2rem, 12vw, 3.5rem); }
+    }
+  </style>
 </head>
 <body>
 
@@ -38,178 +361,97 @@
   <!-- GRID BACKGROUND -->
   <div style="position:fixed; inset:0; z-index:0; pointer-events:none;">
     <div class="grid-bg" style="opacity:0.4;"></div>
-    <div style="position:absolute; inset:0; background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(139,15,30,0.08) 0%, transparent 70%);"></div>
+    <div style="position:absolute; inset:0; background: radial-gradient(ellipse 60% 60% at 50% 40%, rgba(139,15,30,0.1) 0%, transparent 70%);"></div>
   </div>
 
-  <!-- LOGIN -->
-  <div class="access-wrap" id="accessWrap">
-    <div class="login-card" id="loginCard">
-      <div class="login-logo">
-        <div class="login-logo-text">MSY</div>
-        <div class="login-logo-sub">Acesso Restrito · Ordem Masayoshi</div>
+  <!-- PORTAL PAGE -->
+  <div class="portal-wrap">
+    <div class="portal-inner">
+
+      <!-- HEADER -->
+      <div class="portal-header">
+        <div class="portal-eyebrow">Sistema Interno · MSY</div>
+        <h1 class="portal-title">Portal do<br><span class="t-gold">Membro</span></h1>
+        <p class="portal-subtitle">O ambiente interno da Masayoshi. É nele que os membros acessam suas atividades, acompanham seu desempenho e evoluem dentro da organização.</p>
+        <div class="portal-line"></div>
       </div>
 
-      <form id="loginForm">
-        <div class="field">
-          <label for="loginUser">Identificador de Membro</label>
-          <input type="text" id="loginUser" placeholder="Seu nome na ordem" autocomplete="off" required>
+      <!-- INFO BLOCKS -->
+      <div class="portal-blocks">
+        <div class="portal-block">
+          <div class="portal-block-label">Função</div>
+          <p>O Portal centraliza todas as operações da Masayoshi — rankings, atividades, sistema de insígnias, presença e gestão interna em um único ambiente.</p>
         </div>
-        <div class="field">
-          <label for="loginPass">Chave de Acesso</label>
-          <input type="password" id="loginPass" placeholder="••••••••••••" required>
+        <div class="portal-block">
+          <div class="portal-block-label">Estrutura</div>
+          <p>Construído para refletir a hierarquia e os valores da MSY. Cada recurso é pensado para apoiar o desenvolvimento e a disciplina dos membros.</p>
         </div>
-        <button type="submit" class="login-btn">
-          Autenticar <i class="fas fa-arrow-right" style="margin-left:8px;"></i>
-        </button>
-        <div class="error-msg" id="loginError">
-          <i class="fas fa-exclamation-triangle"></i> Credenciais inválidas. Verifique e tente novamente.
+        <div class="portal-block-restrict">
+          <div class="restrict-icon"><i class="fas fa-lock"></i></div>
+          <p><strong>Acesso restrito.</strong> O Portal do Membro é exclusivo para membros ativos da Masayoshi. Não há acesso público.</p>
         </div>
-      </form>
-
-      <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align:center;">
-        <p style="font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.1em; color:var(--mist); line-height:1.65;">
-          Acesso exclusivo para membros da Ordem Masayoshi.<br>
-          Problemas? Entre em contato com a liderança.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- DASHBOARD (hidden by default) -->
-  <div class="dashboard" id="dashboard">
-
-    <!-- PROFILE BAR -->
-    <div class="profile-bar">
-      <div class="profile-pic" id="profPic"></div>
-      <div class="profile-name-role">
-        <div class="p-name" id="profName">Membro</div>
-        <div class="p-role" id="profRole">Cargo</div>
-      </div>
-      <button class="logout-btn" id="logoutBtn">
-        <i class="fas fa-sign-out-alt"></i> Sair
-      </button>
-    </div>
-
-    <!-- WELCOME -->
-    <div style="margin-bottom: 32px; padding: 28px; background: rgba(196,30,58,0.05); border: 1px solid var(--border-red); border-radius:4px;">
-      <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; color:var(--ember); margin-bottom:8px; text-transform:uppercase;">
-        <span class="dot" style="display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--ember); margin-right:8px; animation: pulse 2s infinite;"></span>
-        Sistema Ativo
-      </div>
-      <p style="font-size:0.9rem; color:var(--ash);">Bem-vindo à área restrita da Ordem Masayoshi. Aqui você encontra as ferramentas, projetos e sistemas internos da MSY.</p>
-    </div>
-
-    <!-- TOOLS GRID -->
-    <div class="dash-grid">
-
-      <!-- PROJECTS -->
-      <div class="dash-card">
-        <div class="dash-card-title">Projetos MSY</div>
-
-        <a href="https://t4msy.github.io/Corvus-2.0/" target="_blank" class="proj-link">
-          <div class="proj-link-icon">🦅</div>
-          <div class="proj-link-info">
-            <div class="proj-link-name">Corvus 2.0</div>
-            <div class="proj-link-desc">Agente oficial da MSY · Chat + Suporte</div>
-          </div>
-          <span class="proj-link-arrow"><i class="fas fa-external-link-alt"></i></span>
-        </a>
-
-        <a href="https://t4msy.github.io/MSY-ANALYTICS/" target="_blank" class="proj-link">
-          <div class="proj-link-icon">📊</div>
-          <div class="proj-link-info">
-            <div class="proj-link-name">MSY Analytics — Semanal</div>
-            <div class="proj-link-desc">Relatório de desempenho semanal</div>
-          </div>
-          <span class="proj-link-arrow"><i class="fas fa-external-link-alt"></i></span>
-        </a>
-
-        <a href="https://t4msy.github.io/MSY-ANALYTICS-MENSAL/" target="_blank" class="proj-link">
-          <div class="proj-link-icon">📅</div>
-          <div class="proj-link-info">
-            <div class="proj-link-name">MSY Analytics — Mensal</div>
-            <div class="proj-link-desc">Análise de desempenho mensal</div>
-          </div>
-          <span class="proj-link-arrow"><i class="fas fa-external-link-alt"></i></span>
-        </a>
-
-        <a href="https://t4msy.github.io/Gerador-de-Provas/" target="_blank" class="proj-link">
-          <div class="proj-link-icon">📝</div>
-          <div class="proj-link-info">
-            <div class="proj-link-name">Gerador de Provas IA</div>
-            <div class="proj-link-desc">Criação automática de avaliações</div>
-          </div>
-          <span class="proj-link-arrow"><i class="fas fa-external-link-alt"></i></span>
-        </a>
       </div>
 
-      <!-- COMMUNITY -->
-      <div class="dash-card">
-        <div class="dash-card-title">Comunidade & Links</div>
+      <!-- FEATURES -->
+      <div class="portal-features">
+        <div class="portal-feat">
+          <div class="portal-feat-icon"><i class="fas fa-chart-bar"></i></div>
+          <div class="portal-feat-name">Ranking</div>
+        </div>
+        <div class="portal-feat">
+          <div class="portal-feat-icon"><i class="fas fa-medal"></i></div>
+          <div class="portal-feat-name">Insígnias</div>
+        </div>
+        <div class="portal-feat">
+          <div class="portal-feat-icon"><i class="fas fa-tasks"></i></div>
+          <div class="portal-feat-name">Atividades</div>
+        </div>
+        <div class="portal-feat">
+          <div class="portal-feat-icon"><i class="fas fa-crown"></i></div>
+          <div class="portal-feat-name">Recordes</div>
+        </div>
+        <div class="portal-feat">
+          <div class="portal-feat-icon"><i class="fas fa-calendar-check"></i></div>
+          <div class="portal-feat-name">Presença</div>
+        </div>
+        <div class="portal-feat">
+          <div class="portal-feat-icon"><i class="fas fa-book"></i></div>
+          <div class="portal-feat-name">Biblioteca</div>
+        </div>
+        <div class="portal-feat">
+          <div class="portal-feat-icon"><i class="fas fa-rss"></i></div>
+          <div class="portal-feat-name">Feed Interno</div>
+        </div>
+        <div class="portal-feat">
+          <div class="portal-feat-icon"><i class="fas fa-sliders-h"></i></div>
+          <div class="portal-feat-name">Painel Admin</div>
+        </div>
+      </div>
 
-        <a href="https://discord.gg/c46YvmPt" target="_blank" class="proj-link">
-          <div class="proj-link-icon" style="color:#7289DA;"><i class="fab fa-discord"></i></div>
-          <div class="proj-link-info">
-            <div class="proj-link-name">Discord MSY</div>
-            <div class="proj-link-desc">Servidor oficial da Masayoshi</div>
+      <!-- CTA -->
+      <div class="portal-cta-wrap">
+        <a href="https://portalmsy.site/login.html" target="_blank" class="portal-cta">
+          <div class="cta-glow"></div>
+          <div class="cta-left">
+            <span class="cta-label">Acesso Exclusivo</span>
+            <span class="cta-text">Acessar Portal do Membro</span>
           </div>
-          <span class="proj-link-arrow"><i class="fas fa-external-link-alt"></i></span>
-        </a>
-
-        <a href="https://www.instagram.com/masayoshi.ofc/" target="_blank" class="proj-link">
-          <div class="proj-link-icon" style="color:#E1306C;"><i class="fab fa-instagram"></i></div>
-          <div class="proj-link-info">
-            <div class="proj-link-name">Instagram @masayoshi.ofc</div>
-            <div class="proj-link-desc">Canal oficial de mídia social</div>
+          <div class="cta-right">
+            <div class="cta-status">
+              <span class="cta-dot"></span>
+              Portal Online
+            </div>
+            <div class="cta-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
           </div>
-          <span class="proj-link-arrow"><i class="fas fa-external-link-alt"></i></span>
         </a>
-
-        <a href="https://www.tiktok.com/@masayoshi.msy" target="_blank" class="proj-link">
-          <div class="proj-link-icon"><i class="fab fa-tiktok"></i></div>
-          <div class="proj-link-info">
-            <div class="proj-link-name">TikTok @masayoshi.msy</div>
-            <div class="proj-link-desc">Canal de vídeos curtos</div>
-          </div>
-          <span class="proj-link-arrow"><i class="fas fa-external-link-alt"></i></span>
-        </a>
-
-        <a href="membros.html" class="proj-link">
-          <div class="proj-link-icon"><i class="fas fa-users"></i></div>
-          <div class="proj-link-info">
-            <div class="proj-link-name">Membros da Ordem</div>
-            <div class="proj-link-desc">Lista pública de membros</div>
-          </div>
-          <span class="proj-link-arrow"><i class="fas fa-arrow-right"></i></span>
-        </a>
+        <p class="portal-note">portalmsy.site · Acesso exclusivo para membros ativos da Ordem Masayoshi</p>
       </div>
 
     </div>
-
-    <!-- STATUS BAR -->
-    <div style="margin-top: 24px; padding: 20px 28px; background: var(--surface); border: 1px solid var(--border); border-radius:4px; display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
-      <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; color:var(--mist);">
-        MSY SYSTEM <span style="color:var(--ember); margin-left:8px;">● ONLINE</span>
-      </div>
-      <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; color:var(--mist);">
-        CORVUS <span style="color:#50fa7b; margin-left:8px;">● ATIVO</span>
-      </div>
-      <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; color:var(--mist);">
-        ANALYTICS <span style="color:#50fa7b; margin-left:8px;">● ATIVO</span>
-      </div>
-      <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; color:var(--mist); margin-left:auto;">
-        v2.1.0 · <span id="currentDate"></span>
-      </div>
-    </div>
-
   </div>
 
   <script src="../script.js"></script>
-  <script>
-    // Set current date in footer
-    const d = new Date();
-    const el = document.getElementById('currentDate');
-    if (el) el.textContent = d.toLocaleDateString('pt-BR');
-  </script>
 </body>
 </html>
